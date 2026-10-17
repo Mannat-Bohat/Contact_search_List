@@ -1,0 +1,30 @@
+
+//Contact List Search
+#include <iostream>
+#include <string>
+
+int main() {
+    // An array of strings holding contact names
+    std::string contacts[4] = {"Alice", "Bob", "Charlie", "David"};
+    std::string searchName;
+    bool found = false;
+
+    std::cout << "--- Phonebook Contact Search ---" << std::endl;
+    std::cout << "Enter the name you want to find: ";
+    std::cin >> searchName;
+
+    // Loop through the array to find a match
+    for (int i = 0; i < 4; ++i) {
+        if (contacts[i] == searchName) {
+            found = true;
+            std::cout << "Match found! " << searchName << " is at position " << (i + 1) << " in your list." << std::endl;
+            break; // Stop looking since we found it
+        }
+    }
+
+    if (!found) {
+        std::cout << "Contact not found in the list." << std::endl;
+    }
+
+    return 0;
+}
